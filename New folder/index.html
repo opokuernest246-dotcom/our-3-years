@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Abuntatila ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #16001f,
+                #5c0a52,
+                #d4145a
+            );
+
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           LOGIN PAGE
+        ========================= */
+
+        .login-page {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+
+            padding: 45px 35px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(20px);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.4);
+
+            animation: appear 1.5s ease;
+        }
+
+        .heart {
+            font-size: 65px;
+
+            animation: heartbeat 1.4s infinite;
+        }
+
+        .login-box h1 {
+            margin-top: 15px;
+
+            font-size: 30px;
+        }
+
+        .login-box p {
+            margin: 12px 0 30px;
+
+            opacity: 0.85;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 15px;
+
+            margin: 8px 0;
+
+            border: none;
+
+            outline: none;
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.15);
+
+            color: white;
+
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        button {
+            width: 100%;
+
+            padding: 15px;
+
+            margin-top: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff4b8b,
+                    #ff85a8
+                );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+
+            box-shadow:
+                0 8px 25px rgba(255,75,139,0.4);
+        }
+
+        #error {
+            color: #ffd0dc;
+
+            margin-top: 15px;
+
+            display: none;
+        }
+
+
+        /* =========================
+           MAIN LOVE PAGE
+        ========================= */
+
+        .love-page {
+            display: none;
+
+            min-height: 100vh;
+
+            text-align: center;
+
+            padding: 70px 20px;
+        }
+
+        .love-content {
+            max-width: 1000px;
+
+            margin: auto;
+
+            animation: appear 2s ease;
+        }
+
+        .love-content h1 {
+            font-size: clamp(40px, 8vw, 75px);
+
+            margin-bottom: 15px;
+        }
+
+        .years {
+            font-size: 25px;
+
+            margin-bottom: 25px;
+        }
+
+        .message {
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            opacity: 0.95;
+
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           SPECIAL MESSAGE
+        ========================= */
+
+        .special-message {
+            display: none;
+
+            margin-top: 30px;
+
+            padding: 25px;
+
+            background:
+                rgba(255,255,255,0.12);
+
+            border-radius: 20px;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            animation: appear 1s ease;
+        }
+
+
+        /* =========================
+           MEMORIES
+        ========================= */
+
+        .memories {
+            margin-top: 100px;
+
+            padding: 50px 10px;
+        }
+
+        .memories h2 {
+            font-size: 50px;
+
+            margin-bottom: 10px;
+        }
+
+        .memories-intro {
+            font-size: 18px;
+
+            opacity: 0.8;
+
+            margin-bottom: 40px;
+        }
+
+        .memory-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
+            gap: 25px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .memory-card {
+
+            background:
+                rgba(255,255,255,0.12);
+
+            padding: 15px;
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(10px);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            transition: 0.4s;
+
+            overflow: hidden;
+        }
+
+        .memory-card:hover {
+
+            transform:
+                translateY(-10px)
+                scale(1.02);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.3);
+        }
+
+        .memory-card img,
+        .memory-card video {
+
+            width: 100%;
+
+            max-height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            display: block;
+        }
+
+        .memory-card h3 {
+
+            margin-top: 15px;
+
+            font-size: 20px;
+        }
+
+        .memory-card p {
+
+            margin-top: 7px;
+
+            opacity: 0.7;
+        }
+
+
+        /* =========================
+           DATE
+        ========================= */
+
+        .date {
+
+            margin-top: 25px;
+
+            opacity: 0.7;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .floating-heart {
+
+            position: fixed;
+
+            bottom: -50px;
+
+            font-size: 25px;
+
+            animation:
+                floatUp
+                linear
+                forwards;
+
+            pointer-events: none;
+
+            z-index: 100;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes floatUp {
+
+            from {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+            to {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+
+                transform:
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    scale(1.2);
+            }
+        }
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            body {
+                font-size: 16px;
+            }
+
+            .login-page {
+                padding: 15px;
+            }
+
+            .login-box {
+                max-width: 90%;
+                padding: 35px 25px;
+            }
+
+            .heart {
+                font-size: 55px;
+            }
+
+            .login-box h1 {
+                font-size: 26px;
+                margin-top: 12px;
+            }
+
+            input, button {
+                padding: 12px;
+                font-size: 16px;
+                border-radius: 10px;
+            }
+
+            button {
+                margin-top: 12px;
+            }
+
+            .love-page {
+                padding: 40px 15px;
+            }
+
+            .love-content h1 {
+                font-size: clamp(32px, 7vw, 55px);
+                margin-bottom: 12px;
+            }
+
+            .years {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .message {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .memories {
+                margin-top: 60px;
+                padding: 30px 10px;
+            }
+
+            .memories h2 {
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+
+            .memories-intro {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            .memory-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .memory-card {
+                padding: 12px;
+                border-radius: 15px;
+            }
+
+            .memory-card:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+
+            .memory-card img,
+            .memory-card video {
+                max-height: 350px;
+                border-radius: 12px;
+            }
+
+            .memory-card h3 {
+                margin-top: 12px;
+                font-size: 18px;
+            }
+
+            .memory-card p {
+                margin-top: 6px;
+                font-size: 14px;
+            }
+
+            .special-message {
+                margin-top: 20px;
+                padding: 20px;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            .date {
+                margin-top: 20px;
+                font-size: 13px;
+            }
+
+            button {
+                max-width: 100% !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         LOGIN PAGE
+    ====================================== -->
+
+    <section
+        class="login-page"
+        id="loginPage"
+    >
+
+        <div class="login-box">
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <h1>
+                For Abuntatila
+            </h1>
+
+            <p>
+                There is a little surprise
+                waiting for you...
+            </p>
+
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Your name"
+            >
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Our special date"
+            >
+
+
+            <button onclick="login()">
+
+                Open My Surprise ❤️
+
+            </button>
+
+
+            <div id="error">
+
+                Hmm... that's not it baby 😭❤️
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MAIN LOVE PAGE
+    ====================================== -->
+
+    <section
+        class="love-page"
+        id="lovePage"
+    >
+
+        <div class="love-content">
+
+
+            <!-- HEADER -->
+
+            <div class="heart">
+                💖
+            </div>
+
+
+            <h1>
+                Happy 3 Years,
+                Abuntatila ❤️
+            </h1>
+
+
+            <div class="years">
+
+                3 years of us. 🥹❤️
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <p class="message">
+
+                Three years ago,
+                something beautiful started...
+
+                <br><br>
+
+                And somehow,
+                after all this time,
+                you're still the person
+                who makes my heart
+                beat a little faster.
+
+                <br><br>
+
+                Thank you for every smile,
+                every conversation,
+                every memory,
+                every moment...
+
+                <br><br>
+
+                <strong>
+                    I would choose you again.
+                    And again.
+                    And again.
+                </strong>
+
+            </p>
+
+
+
+            <!-- SPECIAL MESSAGE BUTTON -->
+
+            <button
+                onclick="showMessage()"
+                style="max-width: 400px;"
+            >
+
+                One More Thing 💌
+
+            </button>
+
+
+            <!-- SPECIAL MESSAGE -->
+
+            <div
+                class="special-message"
+                id="specialMessage"
+            >
+
+                Abuntatila... ❤️
+
+                <br><br>
+
+                I don't know what
+                the next years will bring,
+
+                <br><br>
+
+                but I know one thing...
+
+                <br><br>
+
+                <strong>
+                    I want more memories
+                    with you.
+                </strong>
+
+                <br><br>
+
+                Happy 3rd Anniversary,
+                my love. ❤️
+
+                <br><br>
+
+                Here's to us. 🥂💕
+
+                <div class="date">
+
+                    17 • 08 • 2023
+                    →
+                    17 • 08 • 2026
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 MEMORIES SECTION
+            ====================================== -->
+
+            <section class="memories">
+
+
+                <h2>
+                    Our Memories ❤️
+                </h2>
+
+
+                <p class="memories-intro">
+
+                    Three years of moments
+                    I'll never forget.
+
+                </p>
+
+
+
+                <div class="memory-grid">
+
+
+                    <!-- PHOTO 1 -->
+
+                    <div class="memory-card">
+
+                        <img
+                            src="images/photo_2026-08-17_03-00-12.jpg"
+                            alt="Beautiful moment together"
+                        >
+
+                        <h3>
+                            A Beautiful Moment ❤️
+                        </h3>
+
+                        <p>
+                            Every smile with you
+                            is worth forever.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- PHOTO 2 -->
+
+                    <div class="memory-card">
+
+                        <img
+                            src="images/photo_2026-08-17_03-00-15.jpg"
+                            alt="Precious memory"
+                        >
+
+                        <h3>
+                            Precious Times 💕
+                        </h3>
+
+                        <p>
+                            The little moments
+                            are the biggest blessings.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- VIDEO 1 -->
+
+                    <div class="memory-card">
+
+                        <video controls>
+
+                            <source
+                                src="videos/IMG_4548.MP4"
+                                type="video/mp4"
+                            >
+
+                            Your browser does not
+                            support video.
+
+                        </video>
+
+                        <h3>
+                            A Moment We Captured 🎥❤️
+                        </h3>
+
+                        <p>
+                            Forever framed in
+                            my heart.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- PHOTO 3 -->
+
+                    <div class="memory-card">
+
+                        <img
+                            src="images/photo_2026-08-17_03-00-22.jpg"
+                            alt="Us together"
+                        >
+
+                        <h3>
+                            Just Us 💖
+                        </h3>
+
+                        <p>
+                            My favorite place is
+                            wherever you are.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- VIDEO 2 -->
+
+                    <div class="memory-card">
+
+                        <video controls>
+
+                            <source
+                                src="videos/IMG_4553.MP4"
+                                type="video/mp4"
+                            >
+
+                            Your browser does not
+                            support video.
+
+                        </video>
+
+                        <h3>
+                            Precious Moments 🎬💕
+                        </h3>
+
+                        <p>
+                            These are the moments
+                            I want to relive forever.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- PHOTO 4 -->
+
+                    <div class="memory-card">
+
+                        <img
+                            src="images/photo_2026-08-17_03-00-25.jpg"
+                            alt="Us together smiling"
+                        >
+
+                        <h3>
+                            Your Smile ❤️
+                        </h3>
+
+                        <p>
+                            Three years later
+                            and you still make me smile.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- PHOTO 5 -->
+
+                    <div class="memory-card">
+
+                        <img
+                            src="images/photo_2026-08-17_03-00-37.jpg"
+                            alt="Three years of love"
+                        >
+
+                        <h3>
+                            Three Years Strong 💝
+                        </h3>
+
+                        <p>
+                            And many more to come...
+                            I choose you forever.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- END -->
+
+            <div
+                style="
+                margin-top:80px;
+                font-size:30px;
+                "
+            >
+
+                ❤️ ❤️ ❤️
+
+                <br><br>
+
+                <strong>
+                    Forever us.
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        /* =========================
+           LOGIN
+        ========================= */
+
+        function login() {
+
+            const username =
+                document
+                .getElementById("username")
+                .value
+                .trim()
+                .toLowerCase();
+
+
+            const password =
+                document
+                .getElementById("password")
+                .value
+                .trim();
+
+
+            const error =
+                document
+                .getElementById("error");
+
+
+            /*
+                LOGIN DETAILS
+
+                Username:
+                abuntatila
+
+                Password:
+                17/08/2026
+            */
+
+
+            if (
+                username === "abuntatila"
+                &&
+                password === "17/08/2026"
+            ) {
+
+                document
+                .getElementById("loginPage")
+                .style.display = "none";
+
+
+                document
+                .getElementById("lovePage")
+                .style.display = "block";
+
+
+                startHearts();
+
+            }
+
+            else {
+
+                error.style.display = "block";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           SPECIAL MESSAGE
+        ========================= */
+
+        function showMessage() {
+
+            document
+            .getElementById("specialMessage")
+            .style.display = "block";
+
+
+            for (
+                let i = 0;
+                i < 25;
+                i++
+            ) {
+
+                createHeart();
+
+            }
+
+        }
+
+
+
+        /* =========================
+           CREATE HEART
+        ========================= */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.classList
+                .add("floating-heart");
+
+
+            const hearts = [
+
+                "❤️",
+                "💕",
+                "💖",
+                "💗",
+                "💓",
+                "💘",
+                "💝"
+
+            ];
+
+
+            heart.innerHTML =
+                hearts[
+                    Math.floor(
+                        Math.random()
+                        * hearts.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.animationDuration =
+                (4 + Math.random() * 5)
+                + "s";
+
+
+            heart.style.fontSize =
+                (15 + Math.random() * 30)
+                + "px";
+
+
+            document.body
+                .appendChild(heart);
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 9000);
+
+        }
+
+
+
+        /* =========================
+           CONTINUOUS HEARTS
+        ========================= */
+
+        function startHearts() {
+
+            setInterval(() => {
+
+                createHeart();
+
+            }, 700);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

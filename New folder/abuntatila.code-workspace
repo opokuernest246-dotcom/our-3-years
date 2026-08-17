@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Desktop/bb"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "New folder"
+	}
+}
